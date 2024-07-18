@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Campus Map</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Campus Map</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../events/events.html">Event Calendar</a></li>
+                <li><a href="../resources/resources.html">Student Resources Hub</a></li>
+                <li><a href="../feedback/feedback.html">Feedback and Suggestions</a></li>
+                <li><a href="map.html">Interactive Campus Map</a></li>
+                <li><a href="../alumni/alumni.html">Alumni Network</a></li>
+                <li><a href="../emergency/emergency.html">Emergency Information</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Campus Map</h2>
+            <div id="map"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Campus Site. All rights reserved.</p>
+    </footer>
+    <script>
+        function initMap() {
+            const campus = { lat: -25.344, lng: 131.036 }; // Replace with your campus coordinates
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: campus,
+            });
+            const marker = new google.maps.Marker({
+                position: campus,
+                map: map,
+            });
+        }
+    </script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</body>
+</html>
